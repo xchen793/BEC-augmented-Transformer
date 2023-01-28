@@ -1,2 +1,2 @@
 # dl_final_project
-channel - based transformer on machine translation
+channel - combined transformer on machine translation
