@@ -1,0 +1,171 @@
+---------------------------------------
+Begin Slurm Prolog: Aug-12-2025 14:14:31
+Job ID:    6966981
+User ID:   xchen920
+Account:   gts-apm7
+Job name:  channel_trans
+Partition: gpu-v100
+QOS:       inferno
+---------------------------------------
+== Job info ==
+Tue Aug 12 02:14:31 PM EDT 2025
+atl1-1-02-008-35-0.pace.gatech.edu
+/usr/local/pace-apps/lmod/lmod/init/bash: line 200: conda: command not found
+== GPU check ==
+Tue Aug 12 14:14:40 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-16GB           On  |   00000000:AF:00.0 Off |                    0 |
+| N/A   41C    P0             30W /  250W |       0MiB /  16384MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+== Launch ==
+/storage/scratch1/4/xchen920/project
+0.10.0
+device= cuda:0
+  0%|          | 0/135842 [00:00<?, ?it/s] 12%|█▏        | 16833/135842 [00:00<00:01, 105443.61it/s] 28%|██▊       | 38710/135842 [00:00<00:00, 158957.80it/s] 41%|████      | 55920/135842 [00:00<00:00, 122005.64it/s] 51%|█████     | 69498/135842 [00:00<00:00, 95436.82it/s]  66%|██████▌   | 89622/135842 [00:00<00:00, 121308.65it/s] 79%|███████▉  | 107138/135842 [00:01<00:00, 91382.44it/s] 93%|█████████▎| 125668/135842 [00:01<00:00, 110157.62it/s]100%|██████████| 135842/135842 [00:01<00:00, 113018.27it/s]
+  0%|          | 0/108673 [00:00<?, ?it/s] 16%|█▌        | 17403/108673 [00:00<00:01, 48082.38it/s] 33%|███▎      | 35886/108673 [00:00<00:00, 86780.52it/s] 50%|████▉     | 54292/108673 [00:00<00:00, 114783.68it/s] 67%|██████▋   | 72755/108673 [00:00<00:00, 135135.88it/s] 82%|████████▏ | 89357/108673 [00:01<00:00, 72638.02it/s]  99%|█████████▉| 107734/108673 [00:01<00:00, 92038.39it/s]100%|██████████| 108673/108673 [00:01<00:00, 90404.71it/s]
+  0%|          | 0/27169 [00:00<?, ?it/s] 67%|██████▋   | 18118/27169 [00:00<00:00, 181171.53it/s]100%|██████████| 27169/27169 [00:00<00:00, 182754.40it/s]
+tensor([  3, 116,  78, 200,  60, 405,   5,  32, 258,   6,  14, 115,  54, 449,
+         26,  96,   6,  18, 178,   4,   2,   1,   1,   1,   1,   1,   1,   1,
+          1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+          1,   1,   1,   1,   1,   1,   1,   1,   1,   1])
+torch.Size([52, 128]) torch.Size([52, 128])
+++++++++++++++++ 213
+len(train_dataloader): 850
+torch.Size([128, 52]) torch.Size([128, 52])
+tensor([   3,    5,   10,   23,  148,  251,   79,   65,   19,   23,   71,   13,
+          10, 1154,  103,   52,  175,   22,    6,   48,  119,    4,    2,    1,
+           1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+           1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+           1,    1,    1,    1]) torch.int64
+tensor([  3,   5, 191,   6,  68,  58,  83, 263,  56, 115,   6, 284,  39, 265,
+          7, 133,   7,   4,   2,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+          1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+          1,   1,   1,   1,   1,   1,   1,   1,   1,   1]) torch.int64
+checkpoint: project2_model.pt
+Loading model ...
+Model loaded ...
+real target: 	i m taking a couple of days off .
+pred_sentence: <start> i ll be back in a few minutes .
+input: je pars en vacances pour quelques jours .
+target: i m taking a couple of days off .
+pred: <start> i ll be back in a few days .
+
+input: je ne me panique pas .
+target: i m not panicking .
+pred: <start> i m not worried .
+
+input: je recherche un assistant .
+target: i am looking for an assistant .
+pred: <start> i m looking for a house .
+
+input: je suis loin de chez moi .
+target: i m a long way from home .
+pred: <start> i m looking for my keys .
+
+input: vous etes en retard .
+target: you re very late .
+pred: <start> you re in big trouble .
+
+input: j ai soif .
+target: i am thirsty .
+pred: <start> i m impressed .
+
+input: je suis fou de vous .
+target: i m crazy about you .
+pred: <start> i m yours .
+
+input: vous etes vilain .
+target: you are naughty .
+pred: <start> you re fascinating .
+
+input: il est vieux et laid .
+target: he s old and ugly .
+pred: <start> he is in prison .
+
+input: je suis terrifiee .
+target: i m terrified .
+pred: <start> i m exhausted .
+
+input: je suis desole mais l heure d aller te coucher est passee .
+target: i m sorry but it s past your bedtime .
+pred: <start> i m sorry to bother you but i m late .
+
+input: elle m a dit une bonne fois pour toute qu elle ne voulait pas me revoir .
+target: she told me once and for all that she did not want to see me again .
+pred: <start> she didn t want him to go there without me for more than she expected .
+
+input: je pars en vacances pour quelques jours .
+target: i m taking a couple of days off .
+attention_weights: dict_keys(['decoder_layer1_block1', 'decoder_layer1_block2', 'decoder_layer2_block1', 'decoder_layer2_block2', 'decoder_layer3_block1', 'decoder_layer3_block2', 'decoder_layer4_block1', 'decoder_layer4_block2', 'decoder_layer5_block1', 'decoder_layer5_block2', 'decoder_layer6_block1', 'decoder_layer6_block2'])
+pred: <start> i ll be back in a few days .
+
+[Corpus BLEU-4] 10.89
+src: je pars en vacances pour quelques jours .
+ref: i m taking a couple of days off .
+BLEU-4: 17.75
+
+src: je ne me panique pas .
+ref: i m not panicking .
+BLEU-4: 24.45
+
+src: je recherche un assistant .
+ref: i am looking for an assistant .
+BLEU-4: 27.78
+
+src: je suis loin de chez moi .
+ref: i m a long way from home .
+BLEU-4: 17.52
+
+src: vous etes en retard .
+ref: you re very late .
+BLEU-4: 38.61
+
+src: j ai soif .
+ref: i am thirsty .
+BLEU-4: 39.76
+
+src: je suis fou de vous .
+ref: i m crazy about you .
+BLEU-4: 36.56
+
+src: vous etes vilain .
+ref: you are naughty .
+BLEU-4: 39.76
+
+src: il est vieux et laid .
+ref: he s old and ugly .
+BLEU-4: 24.45
+
+src: je suis terrifiee .
+ref: i m terrified .
+BLEU-4: 50.81
+
+== Done ==
+Tue Aug 12 02:19:10 PM EDT 2025
+---------------------------------------
+Begin Slurm Epilog: Aug-12-2025 14:19:10
+Job ID:        6966981
+User ID:       xchen920
+Account:       gts-apm7
+Job name:      channel_trans
+Resources:     cpu=4,gres/gpu:v100=1,mem=16G,node=1
+Rsrc Used:     cput=00:18:36,vmem=0,walltime=00:04:39,mem=36580K,energy_used=0
+Partition:     gpu-v100
+QOS:           inferno
+Nodes:         atl1-1-02-008-35-0
+---------------------------------------
