@@ -152,7 +152,11 @@ def plot_metric(df_history, metric):
     plt.xlabel("Epochs")
     plt.ylabel(metric)
     plt.legend(["train_" + metric, 'val_' + metric])
+<<<<<<< HEAD
     plt.savefig('./imgs/' + metric + 'pair.png', dpi=500)  # save img
+=======
+    plt.savefig('./imgs/' + metric + 'pair.png')  # save img
+>>>>>>> 4b88f66c326d2de72b79686f934db779c5aaaada
     plt.show()
 
 trto.draw_pos_encoding(trto.pos_encoding)

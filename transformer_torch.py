@@ -304,8 +304,13 @@ class EncoderLayer(torch.nn.Module):
         ffn_output = self.ffn(out1)  # =>[b, seq_len, d_model]
         ffn_output = self.dropout2(ffn_output)
         out2 = self.layernorm2(out1 + ffn_output)  #  =>[b, seq_len, d_model]
+<<<<<<< HEAD
         out2 = gaussian_noise_layer(out2) # Here added the awgn channel
         out2 = bec(out2) # Here added the bec channel
+=======
+        # # out2 = gaussian_noise_layer(out2) # Here added the awgn channel
+        # # out2 = bec(out2) # Here added the bec channel
+>>>>>>> 4b88f66c326d2de72b79686f934db779c5aaaada
         # out2 = bsc(out2) # Here added the bsc channel   
         return out2  
 

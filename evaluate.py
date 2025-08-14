@@ -94,6 +94,7 @@ def evaluate(model, inp_sentence):
     # {'..block1': [b, num_heads, targ_seq_len, targ_seq_len],
     #  '..block2': [b, num_heads, targ_seq_len, inp_seq_len], ...}
 
+<<<<<<< HEAD
 
 
 # ==== BLEU metric (dependency-free) ==========================================
@@ -232,6 +233,8 @@ def evaluate_corpus_bleu(sentence_pairs):
 # ==== END BLEU ================================================================
 
 
+=======
+>>>>>>> 4b88f66c326d2de72b79686f934db779c5aaaada
 s = 'je pars en vacances pour quelques jours.'
 evaluate(reload_model,s)
 
@@ -323,6 +326,7 @@ def translate(sentence_pair, plot=None):
 
 batch_translate(sentence_pairs)
 evaluateRandomly(2)
+<<<<<<< HEAD
 translate(sentence_pairs[0], plot='decoder_layer4_block2')
 
 # Compute corpus BLEU on your small eval set
@@ -333,3 +337,6 @@ print(f"[Corpus BLEU-4] {bleu_corpus*100:.2f}")
 for src, ref in sentence_pairs:
     s_bleu = evaluate_sentence_bleu(src, ref)
     print(f"src: {src}\nref: {ref}\nBLEU-4: {s_bleu*100:.2f}\n")
+=======
+translate(sentence_pairs[0], plot='decoder_layer4_block2')
+>>>>>>> 4b88f66c326d2de72b79686f934db779c5aaaada

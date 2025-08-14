@@ -4,7 +4,11 @@ import torch.nn as nn
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Binary Erasure Channel
+<<<<<<< HEAD
 def bec(input_layer, p_e = 0.9):
+=======
+def bec(input_layer, p_e = 0.2):
+>>>>>>> 4b88f66c326d2de72b79686f934db779c5aaaada
     m = nn.Dropout(p=p_e)
     output = m(input_layer)*(1-p_e)
     return output
