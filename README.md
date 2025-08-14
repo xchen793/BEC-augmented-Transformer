@@ -37,6 +37,7 @@ channel-combined-transformer-finalproject/
 ├── results.csv            # Validation accuracies and BLEU scores across BEC p
 ├── environment.yml        # Conda environment configuration
 └── README.md              # Project documentation (this file)
+```
 
 ## Paper: Understanding Transformer Encoder–Decoder Representations through Bernoulli Dropout.
 In this paper, we study Transformer overparameterization through the lens of angular similarity in high-dimensional encoder–decoder embeddings. We apply Bernoulli dropout between the encoder and the decoder, varying the keep probability p to identify a sparsity-dependent threshold above which the Top-1 prediction is preserved. Theoretically, we prove that, if the effective sparsity embeddings is sufficiently large, and thus decoder performance, remain stable under moderate coordinate dropout. Empirically, we implement the Bernoulli dropout by constructing a new Transformer model augmented with Binary Erasure Channel (BEC) and test its performance on an English–French translation task. Experimental results visualize the trends for validation accuracies and BLEU scores, both decline sharply at some threshold.
